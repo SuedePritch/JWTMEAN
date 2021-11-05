@@ -15,6 +15,9 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 //Components - pages
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
+
 import { EmergencyComponent } from './components/emergency/emergency.component';
 import { DocumentsComponent } from './components/documents/documents.component';
 import { CertificatesComponent } from './components/certificates/certificates.component';
@@ -28,7 +31,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 import { AuthService } from './service/auth.service';
 import { ValidateService } from './service/validate.service';
-// import { AuthGuard } from './guards/auth.guard';
+import { AuthGuard } from './guards/auth.guards'; 
 
 export function tokenGetter() {
   return localStorage.getItem('id_token');
@@ -50,7 +53,8 @@ export function tokenGetter() {
     FlhaComponent,
     CovidComponent,
     ConcernComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +69,7 @@ export function tokenGetter() {
       }
     })
   ],
-  providers: [ValidateService, AuthService],
+  providers: [ValidateService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -25,7 +25,7 @@ export class AuthService {
 
   authenticateUser(user: any){
     let headers = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
-    return this.http.post<any>('users/authenticate', user, headers);
+    return this.http.post<any>('http://localhost:5000/users/authenticate', user, headers);
   }
 
 
@@ -36,9 +36,10 @@ export class AuthService {
   }
 
   getProfile(){
-    this.loadToken();
     let headers = { headers: new HttpHeaders({'Content-Type': 'application/json', 'Authorization': this.authToken }) };
-    return this.http.get<any>('users/profile', headers) .pipe(map((response: any) => response));
+    this.loadToken();
+    return this.http.get<any>('http://localhost:5000/users/profile', headers);
+    console.log(this.user)
   
   }
 
