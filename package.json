@@ -1,0 +1,30 @@
+{
+  "name": "jwtmean",
+  "version": "1.0.0",
+  "description": "mean stack app that uses JWT authentication",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuedePritch/JWTMEAN.git"
+  },
+  "author": "James Pritchard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SuedePritch/JWTMEAN/issues"
+  },
+  "homepage": "https://github.com/SuedePritch/JWTMEAN#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "express-sessions": "^1.0.6",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.12",
+    "passport": "^0.5.0",
+    "passport-jwt": "^4.0.0"
+  }
+}
