@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  username!:string
-  password!:string
+  username!:String
+  password!:String
 
   constructor(
     private authService: AuthService,
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
       if(data.success){
         this.authService.storeUserData(data.token, data.user);
         console.log(data);
-        this.router.navigate(["profile"]);
+        this.router.navigate(["covid"]);
 
 
 

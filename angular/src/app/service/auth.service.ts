@@ -36,13 +36,14 @@ export class AuthService {
   }
 
   getProfile(){
-    let headers = { headers: new HttpHeaders({'Content-Type': 'application/json', 'Authorization': this.authToken }) };
+    let headers = new HttpHeaders().set("Content-Type", "application/json")
+    .set("Authorization",this.authToken);
     this.loadToken();
-    return this.http.get<any>('http://localhost:5000/users/profile', headers);
+    return this.http.get<any>('http://localhost:5000/users/profile', {headers: headers});
     console.log(this.user)
   
   }
-
+  
 
   storeUserData(token:string, user:string){
     localStorage.setItem('id_token', token);
