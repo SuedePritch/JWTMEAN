@@ -36,7 +36,8 @@ export class AuthService {
   }
 
   getProfile(){
-    let headers = new HttpHeaders().set("Content-Type", "application/json")
+    let headers = new HttpHeaders()
+    .set("Content-Type", "application/json")
     .set("Authorization",this.authToken);
     this.loadToken();
     return this.http.get<any>('http://localhost:5000/users/profile', {headers: headers});

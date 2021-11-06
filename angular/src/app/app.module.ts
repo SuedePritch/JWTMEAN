@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 //Components - UI
 import { SidenavComponent } from './components/sidenav/sidenav.component';
@@ -61,6 +62,7 @@ export function tokenGetter() {
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatButtonToggleModule,
     HttpClientModule,
     FormsModule,
     JwtModule.forRoot({
