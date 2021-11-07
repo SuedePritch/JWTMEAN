@@ -2,8 +2,8 @@
 <body>
 <div class="container">
     <div class="navigation">
-        <div class="navigation-button" *ngIf="authService.isTokenExp()"><a class="button" routerLink="./login">Sign In/Sign Up<mat-icon>account_circle</mat-icon> </a></div>
-        <div class="navigation-button" *ngIf="!authService.isTokenExp()"><a class="button" routerLink="./profile">Account<mat-icon>account_circle</mat-icon> </a></div>
+        <div class="navigation-button" *ngIf="authService.isLoggedIn()"><a class="button" routerLink="./login">Sign In/Sign Up<mat-icon>account_circle</mat-icon> </a></div>
+        <div class="navigation-button" *ngIf="!authService.isLoggedIn()"><a class="button" routerLink="./profile">Account<mat-icon>account_circle</mat-icon> </a></div>
         
         <div class="navigation-button"><a class="button" routerLink="./emergency">Emergency <mat-icon>emergency</mat-icon> </a></div>
         <div class="navigation-button"><a class="button" routerLink="./documents">Documents <mat-icon>folder</mat-icon> </a></div>

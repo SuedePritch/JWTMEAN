@@ -10,7 +10,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class AuthService {
   authToken:any;
-  user: any;
+  user! : any;
 
   constructor(
     private http:HttpClient,
@@ -37,11 +37,14 @@ export class AuthService {
 
   getProfile(){
     let headers = new HttpHeaders()
-    .set("Content-Type", "application/json")
-    .set("Authorization",this.authToken);
+    .append("Content-Type", "application/json")
+    .append("Authorization",this.authToken);
     this.loadToken();
-    return this.http.get<any>('http://localhost:5000/users/profile', {headers: headers});
-    console.log(this.user)
+    return this.http
+      .get<any>(
+        'http://localhost:5000/users/profile',
+      {headers: headers});
+    
   
   }
   
@@ -53,13 +56,13 @@ export class AuthService {
     this.user = user;
   }
   
-  isTokenExp(){
+  isLoggedIn(){
     return this.jwtHelper.isTokenExpired();
   }
 
   logout(){
     this.authToken = null;
-    this.user = null;
+    this.user = {};
     localStorage.clear();
   }
 };
