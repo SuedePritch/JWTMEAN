@@ -4,7 +4,7 @@
   "description": "mean stack app that uses JWT authentication",
   "main": "app.js",
   "scripts": {
-    "start": "node app"
+    "start": "nodemon app"
   },
   "repository": {
     "type": "git",
