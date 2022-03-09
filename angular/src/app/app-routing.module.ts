@@ -22,7 +22,7 @@ import { AuthGuard } from './guards/auth.guards';
 
 
 const routes: Routes = [
-  {path:'', component:FlhaComponent},
+  {path:'', component:RegisterComponent},
 
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
