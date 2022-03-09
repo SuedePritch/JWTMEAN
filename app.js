@@ -12,7 +12,7 @@ const PORT = 8080;
 
 
 //Connect to Database
-mongoose.connect(config.database, function(err){
+mongoose.connect(config.database,{ useUnifiedTopology: true },  function(err){
     if(err){
         console.log('ERROR'+err);
     }else{
