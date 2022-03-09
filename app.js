@@ -8,11 +8,11 @@ const config = require('./config/database')
 
 const app= express();
 const users = require('./routes/users')
-const PORT = 8080;
+const PORT = 5003;
 
 
 //Connect to Database
-mongoose.connect(config.database,{ useUnifiedTopology: true },  function(err){
+mongoose.connect(config.database,  function(err){
     if(err){
         console.log('ERROR'+err);
     }else{
