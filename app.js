@@ -8,7 +8,7 @@ const config = require('./config/database')
 
 const app= express();
 const users = require('./routes/users')
-const PORT = 58543;
+const PORT = process.env.PORT || 8080;
 
 
 //Connect to Database
